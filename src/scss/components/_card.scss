@@ -1,0 +1,33 @@
+.card {
+  align-items: center;
+  background-color: var(--white);
+  border: 15px solid var(--white);
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  min-block-size: 322px;
+  max-inline-size: 364px;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.card--default {
+    &:hover {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+
+      .button {
+        background-color: transparent;
+        border-color: var(--white);
+      }
+    }
+  }
+
+  &.card--border {
+    &:hover {
+      border-color: var(--secondary);
+    }
+  }
+}

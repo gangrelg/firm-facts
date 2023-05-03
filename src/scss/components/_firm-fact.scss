@@ -1,0 +1,32 @@
+@use "../core/breakpoints";
+
+.firm-fact {
+  margin-block-start: 100px;
+  position: relative;
+}
+
+.firm-fact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 18px;
+  margin-block-start: 74px;
+}
+
+.firm-fact__featured {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.firm-fact--btn-top {
+  .card {
+    display: block;
+    padding-block-start: 35px;
+  }
+}
+
+.firm-fact__close-btn {
+  position: absolute;
+  right: 0;
+  top: -40px;
+}

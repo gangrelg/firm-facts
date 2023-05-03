@@ -1,0 +1,59 @@
+@use "../core/breakpoints";
+@use "sass-rem" as rem;
+
+.button {
+  background-color: var(--main);
+  block-size: 70px;
+  border: 2px solid transparent;
+  border-radius: 70px;
+  color: var(--white);
+  font-size: rem.convert(19px);
+  font-weight: 600;
+  line-height: 1.27;
+  letter-spacing: rem.convert(-0.5px);
+  max-inline-size: 310px;
+  transition: background-color 0.3s ease, border-color 0.3 ease;
+
+  &.button--default {
+    padding: rem.convert(23px) rem.convert(33px);
+    .button__text {
+      display: inline-block;
+      max-inline-size: 210px;
+      text-overflow: clip;
+      white-space: nowrap;
+    }
+  }
+
+  &.button--icon {
+    align-items: center;
+    display: flex;
+    padding: 0 rem.convert(15px);
+
+    @include breakpoints.mq(desktop) {
+      margin: 0 rem.convert(12px);
+    }
+    .button__text {
+      display: -webkit-box;
+      max-inline-size: 226px;
+      max-block-size: 48px;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  &:disabled {
+    background-color: var(--disabled);
+    cursor: not-allowed;
+  }
+}
+
+.button__icon {
+  margin-inline-end: 16px;
+}
+
+.button__text {
+  overflow: hidden;
+}
